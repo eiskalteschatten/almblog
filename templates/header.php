@@ -40,23 +40,21 @@ use App\Config\NavConfig;
         ?>
     </head>
     <body>
-        <header>
-            <div>
-                <?php
-                    $white_logo = true;
-                    include(AppConfig::TEMPLATES_PATH . "/logo.php");
-                ?>
+        <header class="container-fluid container-xxl">
+            <?php
+                $white_logo = true;
+                include(AppConfig::TEMPLATES_PATH . "/logo.php");
+            ?>
 
-                <nav>
-                    <?php
-                        foreach (NavConfig::MAIN_NAV as $_nav_item) {
-                            $current_uri = $_SERVER["REQUEST_URI"];
-                            $is_homepage = $_nav_item["route"] === "/";
-                            $href = $is_homepage ? "/" : "/" . $_nav_item["route"] . "/";
-                            $classes = $current_uri === $href || ($current_uri === "" && $is_homepage) ? "main-nav-link selected" : "main-nav-link";
-                            echo "<a href=\"" . $href . "\" class=\"" . $classes . "\">" . $_nav_item["title"] . "</a>";
-                        }
-                    ?>
-                </nav>
-            </div>
+            <nav>
+                <?php
+                    foreach (NavConfig::MAIN_NAV as $_nav_item) {
+                        $current_uri = $_SERVER["REQUEST_URI"];
+                        $is_homepage = $_nav_item["route"] === "/";
+                        $href = $is_homepage ? "/" : "/" . $_nav_item["route"] . "/";
+                        $classes = $current_uri === $href || ($current_uri === "" && $is_homepage) ? "main-nav-link selected" : "main-nav-link";
+                        echo "<a href=\"" . $href . "\" class=\"" . $classes . "\">" . $_nav_item["title"] . "</a>";
+                    }
+                ?>
+            </nav>
         </header>
