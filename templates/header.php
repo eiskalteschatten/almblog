@@ -40,14 +40,14 @@ use App\Config\NavConfig;
         ?>
     </head>
     <body>
-        <header class="header">
-            <div class="container-fluid container-xxl h-100 w-100 d-flex gap-4 align-items-center justify-content-between">
+        <header>
+            <div>
                 <?php
                     $white_logo = true;
                     include(AppConfig::TEMPLATES_PATH . "/logo.php");
                 ?>
 
-                <nav class="main-nav d-flex gap-2 align-items-center">
+                <nav>
                     <?php
                         foreach (NavConfig::MAIN_NAV as $_nav_item) {
                             $current_uri = $_SERVER["REQUEST_URI"];
