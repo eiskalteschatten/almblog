@@ -19,8 +19,6 @@ use App\Config\NavConfig;
 
         <link rel="icon" type="image/png" href="/images/favicon.png">
 
-        <link rel="stylesheet" href="/_assets/css/bootstrap-grid.min.css?v=5.3.8">
-        <link rel="stylesheet" href="/_assets/css/bootstrap-utilities.min.css?v=5.3.8">
         <link rel="stylesheet" href="/_assets/css/styles.css?v=1.0">
 
         <?php
@@ -60,7 +58,5 @@ use App\Config\NavConfig;
                         }
                     ?>
                 </nav>
-
-                <?php include(AppConfig::TEMPLATES_PATH . "/social_icons_header.php"); ?>
             </div>
         </header>

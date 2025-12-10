@@ -31,8 +31,6 @@ use App\Config\NavConfig;
                     <a href="/privacy-policy" class="footer-link">Privacy Policy</a>
                     <a href="/contact" class="footer-link">Contact</a>
                 </div>
-
-                <?php include(AppConfig::TEMPLATES_PATH . "/social_icons.php"); ?>
             </div>
         </footer>
     </body>
