@@ -8,7 +8,7 @@ require_once(AppConfig::TEMPLATES_PATH . "/header.php");
 ?>
 
 <main class="container-fluid container-xxl">
-  About Me
+  <h1>About Alm Blog</h1>
 </main>
 
 <?php
