@@ -1,5 +1,3 @@
-<div>
-    <a href="/">
-        Alm Blog
-    </a>
-</div>
+<a href="/">
+    Alm Blog
+</a>
