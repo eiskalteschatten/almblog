@@ -1,0 +1,6 @@
+.DS_STORE
+
+.cache/*
+!.cache/.htaccess
+
+vendor

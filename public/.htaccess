@@ -1,0 +1,15 @@
+RewriteEngine On
+
+# Deny access to specific folders (but allow  and api/)
+# RewriteCond %{REQUEST_URI} ^/(bin|config|lib|page_components|pages|\.cache|\.git)(/.*)?$
+# RewriteRule ^(.*)$ - [F,L]
+
+# Deny access to specific file types and config files
+# RewriteCond %{REQUEST_URI} \.(md|yml|yaml|json|conf|dockerfile|dockerignore|editorconfig|gitignore)$ [NC]
+# RewriteRule ^(.*)$ - [F,L]
+
+# Standard rewrite rules for your application
+# This is needed for routers that don't use the file system
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule (.*) /index.php/$1 [L,QSA]
