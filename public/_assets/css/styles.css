@@ -2,16 +2,14 @@
     --primary-color: var(--palette-yellow);
     --background-color: #ffffff;
     --color: #000000;
-    --border-color: #cfcfcf;
-    --link-color: blue;
+    --link-color: #0f2230;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --background-color: #000000;
+        --background-color: #0f2230;
         --color: #ffffff;
-        --blue-or-yellow: var(--palette-yellow);
-        --border-color: #333333;
+        --link-color: #b2d3eb;
     }
 }
 
