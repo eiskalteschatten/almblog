@@ -9,7 +9,7 @@ class NavConfig {
         ],
         [
             "route" => "about",
-            "title" => "About Me"
+            "title" => "About Alm Blog"
         ]
     ];
 
@@ -20,7 +20,7 @@ class NavConfig {
         ],
         [
             "route" => "about",
-            "title" => "About Me"
+            "title" => "About Alm Blog"
         ],
     ];
 }
