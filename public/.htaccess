@@ -9,7 +9,6 @@ RewriteEngine On
 # RewriteRule ^(.*)$ - [F,L]
 
 # Standard rewrite rules for your application
-# This is needed for routers that don't use the file system
-# RewriteCond %{REQUEST_FILENAME} !-f
-# RewriteCond %{REQUEST_FILENAME} !-d
-# RewriteRule (.*) /index.php/$1 [L,QSA]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule (.*) /index.php/$1 [L,QSA]

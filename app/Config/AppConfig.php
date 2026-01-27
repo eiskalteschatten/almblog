@@ -5,7 +5,8 @@ namespace App\Config;
 
 class AppConfig {
     public const CACHE_DIRECTORY = __DIR__ . "/../../.cache";
-    public const TEMPLATES_PATH = __DIR__ . "/../../templates";
+    public const VIEWS_PATH = __DIR__ . "/../../views";
+    public const VIEW_PARTIALS_PATH = self::VIEWS_PATH . "/partials";
 
     // Could also add environment-specific configs
     public static function isProduction(): bool {

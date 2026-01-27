@@ -1,12 +1,14 @@
 <?php
 declare(strict_types=1);
 
+require_once(__DIR__ . "/Config/AppConfig.php");
+
 spl_autoload_register(function ($class) {
     // Define namespace to directory mappings
     $prefixes = [
-        'App\\Core\\' => __DIR__ . "/../src/Core",
-        'App\\Config\\' => __DIR__ . "/../src/Config",
-        'App\\Services\\' => __DIR__ . "/../src/Services",
+        'App\\Core\\' => __DIR__ . "/../app/Core",
+        'App\\Config\\' => __DIR__ . "/../app/Config",
+        // 'App\\Services\\' => __DIR__ . "/../app/Services",
     ];
 
     // Check each prefix
