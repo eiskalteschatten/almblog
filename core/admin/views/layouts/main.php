@@ -5,21 +5,16 @@ use AlmBlog\Core\Router;
 use AlmBlog\Config\AppConfig;
 use AlmBlog\Pages\Nav;
 use AlmBlog\Pages\SEO;
-
-$user_config = AppConfig::get_user_config();
 ?>
 
 <!DOCTYPE html>
-<html lang="<?php echo $user_config["language"] ?? 'en'; ?>">
+<html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=0.9">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <meta http-equiv="Content-Language" content="<?php echo $user_config["language"] ?? 'en'; ?>">
+        <meta http-equiv="Content-Language" content="en">
         <meta name="color-scheme" content="light dark">
-        <meta name="description" content="<?php echo SEO::get_page_description();  ?>">
-        <meta name="keywords" content="<?php echo SEO::get_page_keywords(); ?>">
-        <meta name="author" content="<?php echo $user_config["authorName"]; ?>">
 
         <title><?php echo SEO::get_full_page_title(); ?></title>
 
@@ -40,7 +35,7 @@ $user_config = AppConfig::get_user_config();
         <?php include_once(Router::$page_path); ?>
 
         <footer>
-            &copy <?php echo date("Y"); ?> <?php echo $user_config["authorName"]; ?>. All rights reserved.
+            v<?php echo AppConfig::APP_VERSION; ?>
         </footer>
     </body>
 </html>

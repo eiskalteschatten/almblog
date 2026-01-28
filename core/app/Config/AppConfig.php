@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace AlmBlog\Config;
 
 class AppConfig {
+    public const APP_VERSION = "1.0.0";
     public const VIEWS_PATH = __DIR__ . "/../../../frontend/views";
     public const ADMIN_VIEWS_PATH = __DIR__ . "/../../admin/views";
 
