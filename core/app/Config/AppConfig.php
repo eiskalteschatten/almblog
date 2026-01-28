@@ -24,7 +24,7 @@ class AppConfig {
                 self::$blogConfig = json_decode($jsonContent, true);
             }
             else {
-                self::$blogConfig = [];
+                die("Configuration file not found at {$configPath}");
             }
         }
 
