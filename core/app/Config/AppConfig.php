@@ -4,10 +4,8 @@ declare(strict_types=1);
 namespace AlmBlog\Config;
 
 class AppConfig {
-    public const CACHE_DIRECTORY = __DIR__ . "/../../.cache";
     public const VIEWS_PATH = __DIR__ . "/../../../frontend/views";
     public const ADMIN_VIEWS_PATH = __DIR__ . "/../../admin/views";
-    public const VIEW_PARTIALS_PATH = self::VIEWS_PATH . "/partials";
 
     public static $user_config = null;
 
