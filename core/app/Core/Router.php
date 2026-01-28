@@ -43,9 +43,7 @@ class Router {
 
         $page_config = isset(PageConfig::PAGES[$page_key]) ? PageConfig::PAGES[$page_key] : array();
 
-        return [
-            "config" => $page_config,
-            "path" => $page_path
-        ];
+        PageConfig::set_page_config($page_config);
+        PageConfig::set_page_path($page_path);
     }
 }

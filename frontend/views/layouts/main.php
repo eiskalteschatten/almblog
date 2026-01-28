@@ -3,12 +3,9 @@ declare(strict_types=1);
 
 use AlmBlog\Core\Router;
 use AlmBlog\Config\AppConfig;
+use AlmBlog\Config\PageConfig;
 use AlmBlog\Pages\Nav;
 use AlmBlog\Pages\SEO;
-
-$resolved_page = Router::resolve_page();
-$page_config = $resolved_page["config"];
-$page_path = $resolved_page["path"];
 ?>
 
 <!DOCTYPE html>
@@ -35,13 +32,13 @@ $page_path = $resolved_page["path"];
                 <?php include("../partials/logo.php"); ?>
 
                 <nav>
-                    <a href="/" class="<?php echo Nav::get_active_css_class('/'); ?>">Home</a>
-                    <a href="/about" class="<?php echo Nav::get_active_css_class('/about'); ?>">About</a>
+                    <a href="/" class="<?php echo Nav::get_active_css_class(); ?>">Home</a>
+                    <a href="/about" class="<?php echo Nav::get_active_css_class(); ?>">About</a>
                 </nav>
             </div>
         </header>
 
-        <?php include_once($page_path); ?>
+        <?php include_once(PageConfig::$page_path); ?>
 
         <footer>
             &copy <?php echo date("Y"); ?> <?php echo $user_config["authorName"]; ?>. All rights reserved.
