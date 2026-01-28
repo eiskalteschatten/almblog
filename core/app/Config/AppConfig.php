@@ -5,8 +5,8 @@ namespace AlmBlog\Config;
 
 class AppConfig {
     public const APP_VERSION = "1.0.0";
-    public const VIEWS_PATH = __DIR__ . "/../../../frontend/views";
-    public const ADMIN_VIEWS_PATH = __DIR__ . "/../../admin/views";
+    public const TEMPLATES_PATH = __DIR__ . "/../../../frontend/templates";
+    public const ADMIN_TEMPLATES_PATH = __DIR__ . "/../../admin/templates";
 
     public static $user_config = null;
     public static $admin_config = null;

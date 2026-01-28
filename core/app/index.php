@@ -13,11 +13,11 @@ if (isset($is_admin)) {
     AppConfig::get_admin_config();
     Router::resolve_admin_page();
 
-    require_once(AppConfig::ADMIN_VIEWS_PATH . "/layouts/main.php");
+    require_once(AppConfig::ADMIN_TEMPLATES_PATH . "/layouts/main.php");
 }
 else {
     AppConfig::get_user_config();
     Router::resolve_frontend_page();
 
-    require_once(AppConfig::VIEWS_PATH . "/layouts/main.php");
+    require_once(AppConfig::TEMPLATES_PATH . "/layouts/main.php");
 }
