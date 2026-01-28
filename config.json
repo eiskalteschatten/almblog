@@ -1,5 +1,19 @@
 {
     "language": "en",
-    "blog_title": "Alm Blog",
-    "blog_description": "Another blog built with Alm"
+    "authorName": "Alm Blog Author",
+    "seo": {
+        "defaultTitle": "Alm Blog",
+        "defaultDescription": "Another blog built with Alm",
+        "defaultKeywords": "blog, alm, almblog",
+        "titleSeparator": "|"
+    },
+    "pages": {
+        "about": {
+            "title": "About",
+            "description": "Learn more about the author of this blog."
+        },
+        "404": {
+            "title": "Page Not Found"
+        }
+    }
 }

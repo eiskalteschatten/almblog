@@ -8,6 +8,7 @@ spl_autoload_register(function ($class) {
     $prefixes = [
         'AlmBlog\\Core\\' => __DIR__ . "/../app/Core",
         'AlmBlog\\Config\\' => __DIR__ . "/../app/Config",
+        'AlmBlog\\Pages\\' => __DIR__ . "/../app/Pages",
         // 'AlmBlog\\Services\\' => __DIR__ . "/../app/Services",
     ];
 

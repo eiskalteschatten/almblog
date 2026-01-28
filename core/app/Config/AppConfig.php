@@ -11,11 +11,11 @@ class AppConfig {
     public static $blogConfig = null;
 
     // Could also add environment-specific configs
-    public static function isProduction(): bool {
+    public static function is_production(): bool {
         return getenv('APP_ENV') === 'production';
     }
 
-    public static function getUserConfig(): array {
+    public static function get_user_configget(): array {
         if (self::$blogConfig === null) {
             $configPath = __DIR__ . "/../../../config.json";
 
