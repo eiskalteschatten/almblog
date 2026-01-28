@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 use AlmBlog\Core\Router;
 use AlmBlog\Config\AppConfig;
-use AlmBlog\Config\PageConfig;
 use AlmBlog\Pages\Nav;
 use AlmBlog\Pages\SEO;
 
@@ -38,7 +37,7 @@ $user_config = AppConfig::get_user_config();
             </nav>
         </header>
 
-        <?php include_once(PageConfig::$page_path); ?>
+        <?php include_once(Router::$page_path); ?>
 
         <footer>
             &copy <?php echo date("Y"); ?> <?php echo $user_config["authorName"]; ?>. All rights reserved.

@@ -2,7 +2,6 @@
 declare(strict_types=1);
 
 use AlmBlog\Core\Router;
-use AlmBlog\Config\PageConfig;
 use AlmBlog\Config\AppConfig;
 
 $resolved_page = Router::resolve_page();

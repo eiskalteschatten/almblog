@@ -4,9 +4,12 @@ declare(strict_types=1);
 namespace AlmBlog\Core;
 
 use AlmBlog\Config\AppConfig;
-use AlmBlog\Config\PageConfig;
 
 class Router {
+    public static $page_config = [];
+    public static $page_path = "";
+    public static $page_key = "";
+
     private static function parse_uri() {
         // Get the full URI and break it apart
         $full_path = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
@@ -44,8 +47,8 @@ class Router {
         $pages = AppConfig::get_user_config()["pages"];
         $page_config = isset($pages[$page_key]) ? $pages[$page_key] : [];
 
-        PageConfig::set_page_config($page_config);
-        PageConfig::set_page_path($page_path);
-        PageConfig::set_page_key($page_key);
+        Router::$page_config = $page_config;
+        Router::$page_path = $page_path;
+        Router::$page_key = $page_key;
     }
 }
