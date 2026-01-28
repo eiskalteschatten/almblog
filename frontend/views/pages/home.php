@@ -1,3 +1,3 @@
-<main class="container-fluid container-xxl">
+<main>
    Homepage
 </main>

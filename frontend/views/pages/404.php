@@ -1,4 +1,4 @@
-<main class="container-fluid container-xxl">
-    <h1 class="page-title">Page Not Found</h1>
+<main>
+    <h1>Page Not Found</h1>
     <p>Sorry, the page you are looking for does not exist.</p>
 </main>

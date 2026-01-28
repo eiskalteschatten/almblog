@@ -1,3 +1,1 @@
-<a href="/">
-    Alm Blog
-</a>
+<a href="/">Alm Blog</a>
