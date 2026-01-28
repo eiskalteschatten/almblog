@@ -10,8 +10,8 @@ class SEO {
     public static function get_full_page_title(): string {
         $user_config = AppConfig::get_user_config();
         $page_title = Router::$page_config["title"] ?? "";
-        $blog_name = $user_config["blogName"] ?? "Alm Blog";
-        $title_separator = $user_config["titleSeparator"] ?? "|";
+        $blog_name = $user_config["seo"]["defaultTitle"] ?? "Alm Blog";
+        $title_separator = $user_config["seo"]["titleSeparator"] ?? "|";
 
         if (!empty($page_title)) {
             return "{$page_title} {$title_separator} {$blog_name}";

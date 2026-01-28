@@ -22,7 +22,10 @@ class AppConfig {
     }
 
     public static function get_user_config(): array {
-        if (self::$user_config === null) {
+        if (self::$user_config === null && self::$admin_config !== null) {
+            return self::get_admin_config();
+        }
+        else if (self::$user_config === null) {
             $config_path = __DIR__ . "/../../../config.json";
             self::$user_config = self::load_json_config($config_path);
         }
