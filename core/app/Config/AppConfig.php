@@ -11,21 +11,16 @@ class AppConfig {
 
     public static $blog_config = null;
 
-    // Could also add environment-specific configs
-    public static function is_production(): bool {
-        return getenv('APP_ENV') === 'production';
-    }
-
     public static function get_user_config(): array {
         if (self::$blog_config === null) {
-            $configPath = __DIR__ . "/../../../config.json";
+            $config_path = __DIR__ . "/../../../config.json";
 
-            if (file_exists($configPath)) {
-                $jsonContent = file_get_contents($configPath);
-                self::$blog_config = json_decode($jsonContent, true);
+            if (file_exists($config_path)) {
+                $json_content = file_get_contents($config_path);
+                self::$blog_config = json_decode($json_content, true);
             }
             else {
-                die("Configuration file not found at {$configPath}");
+                die("Configuration file not found at {$config_path}!");
             }
         }
 
