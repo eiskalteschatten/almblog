@@ -33,23 +33,7 @@ if (!isset($page_config) || !isset($page_path)) {
 
         <link rel="stylesheet" href="/css/styles.css?v=1.0">
 
-        <?php
-            if (isset($page_config["styles"])) {
-                foreach ($page_config["styles"] as $styles) {
-                    echo "<link rel=\"stylesheet\" href=\"/css/" . $styles . "\">";
-                }
-            }
-        ?>
-
         <script src="/js/scripts.js?v=1.0" async></script>
-
-        <?php
-            if (isset($page_config["scripts"])) {
-                foreach ($page_config["scripts"] as $script) {
-                    echo "<script src=\"/js/" . $script[0] . "\" $script[1]></script>";
-                }
-            }
-        ?>
     </head>
     <body>
         <header class="header">
