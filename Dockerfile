@@ -8,7 +8,7 @@ RUN apt-get update && \
 #     mv composer.phar /usr/local/bin/composer && \
 #     chmod +x /usr/local/bin/composer
 
-RUN a2enmod rewrite
+RUN a2enmod rewrite alias
 
 COPY apache-config.conf /etc/apache2/sites-available/000-default.conf
 

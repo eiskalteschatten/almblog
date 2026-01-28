@@ -18,7 +18,7 @@ class Router {
         $full_path = rtrim($full_path, "/");
 
         if (AppConfig::is_admin()) {
-            $full_path = ltrim($full_path, self::ADMIN_BASE_PATH);
+            $full_path = substr($full_path, strlen(self::ADMIN_BASE_PATH));
         }
 
         $path_parts = explode("/", $full_path);
