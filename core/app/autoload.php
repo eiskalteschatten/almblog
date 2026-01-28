@@ -6,9 +6,9 @@ require_once(__DIR__ . "/Config/AppConfig.php");
 spl_autoload_register(function ($class) {
     // Define namespace to directory mappings
     $prefixes = [
-        'App\\Core\\' => __DIR__ . "/../app/Core",
-        'App\\Config\\' => __DIR__ . "/../app/Config",
-        // 'App\\Services\\' => __DIR__ . "/../app/Services",
+        'AlmBlog\\Core\\' => __DIR__ . "/../app/Core",
+        'AlmBlog\\Config\\' => __DIR__ . "/../app/Config",
+        // 'AlmBlog\\Services\\' => __DIR__ . "/../app/Services",
     ];
 
     // Check each prefix

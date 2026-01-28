@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-use App\Core\Router;
-use App\Config\PageConfig;
-use App\Config\AppConfig;
+use AlmBlog\Core\Router;
+use AlmBlog\Config\PageConfig;
+use AlmBlog\Config\AppConfig;
 
 $resolved_page = Router::resolve_page();
 $page_config = $resolved_page["config"];

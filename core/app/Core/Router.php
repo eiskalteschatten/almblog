@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Core;
+namespace AlmBlog\Core;
 
-use App\Config\AppConfig;
-use App\Config\PageConfig;
+use AlmBlog\Config\AppConfig;
+use AlmBlog\Config\PageConfig;
 
 class Router {
     private static function parse_uri() {

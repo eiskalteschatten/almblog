@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Config;
+namespace AlmBlog\Config;
 
 class AppConfig {
     public const CACHE_DIRECTORY = __DIR__ . "/../../.cache";
