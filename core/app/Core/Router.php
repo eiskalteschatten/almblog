@@ -6,6 +6,8 @@ namespace AlmBlog\Core;
 use AlmBlog\Config\AppConfig;
 
 class Router {
+    private const ADMIN_BASE_PATH = "/admin";
+
     public static $page_config = [];
     public static $page_path = "";
     public static $page_key = "";
@@ -14,6 +16,11 @@ class Router {
         // Get the full URI and break it apart
         $full_path = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
         $full_path = rtrim($full_path, "/");
+
+        if (AppConfig::is_admin()) {
+            $full_path = ltrim($full_path, self::ADMIN_BASE_PATH);
+        }
+
         $path_parts = explode("/", $full_path);
 
         // Remove the unneeded parts: "/" and "index.php"
@@ -59,7 +66,7 @@ class Router {
 
     public static function resolve_admin_page(): void {
         $views_path = AppConfig::ADMIN_VIEWS_PATH;
-        $pages = AppConfig::get_user_config()["pages"];
+        $pages = AppConfig::get_admin_config()["pages"];
         Router::resolve_page($views_path, $pages);
     }
 }

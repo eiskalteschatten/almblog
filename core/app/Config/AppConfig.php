@@ -38,4 +38,8 @@ class AppConfig {
 
         return self::$admin_config;
     }
+
+    public static function is_admin(): bool {
+        return isset(self::$admin_config);
+    }
 }
