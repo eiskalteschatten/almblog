@@ -26,7 +26,7 @@ class AppConfig {
             return self::get_admin_config();
         }
         else if (self::$user_config === null) {
-            $config_path = __DIR__ . "/../../../config.json";
+            $config_path = __DIR__ . "/../../../blog_config.json";
             self::$user_config = self::load_json_config($config_path);
         }
 
