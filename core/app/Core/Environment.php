@@ -1,15 +1,15 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Core;
+namespace AlmBlog\Core;
 
 class Environment {
-    public static function loadDotEnv(): void {
+    public static function load_dot_env(): void {
         $env_path = __DIR__ . "/../../.env";
-        Environment::loadEnv($env_path);
+        Environment::load_env($env_path);
     }
 
-    public static function loadEnv(string $path): void {
+    public static function load_env(string $path): void {
         if (!file_exists($path)) {
             return;
         }

@@ -1,12 +1,15 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Core;
+namespace AlmBlog\Core;
 
-use App\Config\AppConfig;
-use App\Config\PageConfig;
+use AlmBlog\Config\AppConfig;
 
 class Router {
+    public static $page_config = [];
+    public static $page_path = "";
+    public static $page_key = "";
+
     private static function parse_uri() {
         // Get the full URI and break it apart
         $full_path = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
@@ -25,7 +28,7 @@ class Router {
         return implode("/", $path_parts);
     }
 
-    public static function resolve_page(): array {
+    public static function resolve_page(): void {
         $path_parts = Router::parse_uri();
         $page_key = count($path_parts) === 0 || $path_parts[0] === "" ? "home" : implode("/", $path_parts);
         $page_path_base = AppConfig::VIEWS_PATH . "/pages/" . $page_key;
@@ -41,11 +44,11 @@ class Router {
             $page_path = AppConfig::VIEWS_PATH . "/pages/404.php";
         }
 
-        $page_config = isset(PageConfig::PAGES[$page_key]) ? PageConfig::PAGES[$page_key] : array();
+        $pages = AppConfig::get_user_config()["pages"];
+        $page_config = isset($pages[$page_key]) ? $pages[$page_key] : [];
 
-        return [
-            "config" => $page_config,
-            "path" => $page_path
-        ];
+        Router::$page_config = $page_config;
+        Router::$page_path = $page_path;
+        Router::$page_key = $page_key;
     }
 }
