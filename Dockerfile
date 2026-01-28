@@ -10,7 +10,7 @@ RUN apt-get update && \
 
 RUN a2enmod rewrite
 
-COPY docs/apache-config.conf /etc/apache2/sites-available/000-default.conf
+COPY apache-config.conf /etc/apache2/sites-available/000-default.conf
 
 COPY . /var/www/html/
 WORKDIR /var/www/html/

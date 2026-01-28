@@ -28,10 +28,10 @@ class Router {
         return implode("/", $path_parts);
     }
 
-    public static function resolve_page(): void {
+    private static function resolve_page(string $views_path, array $pages): void {
         $path_parts = Router::parse_uri();
         $page_key = count($path_parts) === 0 || $path_parts[0] === "" ? "home" : implode("/", $path_parts);
-        $page_path_base = AppConfig::VIEWS_PATH . "/pages/" . $page_key;
+        $page_path_base = $views_path . "/pages/" . $page_key;
         $page_path = $page_path_base . ".php";
 
         if (!file_exists($page_path)) {
@@ -41,14 +41,25 @@ class Router {
         if (!file_exists($page_path)) {
             http_response_code(404);
             $page_key = "404";
-            $page_path = AppConfig::VIEWS_PATH . "/pages/404.php";
+            $page_path = $views_path . "/pages/404.php";
         }
 
-        $pages = AppConfig::get_user_config()["pages"];
         $page_config = isset($pages[$page_key]) ? $pages[$page_key] : [];
 
         Router::$page_config = $page_config;
         Router::$page_path = $page_path;
         Router::$page_key = $page_key;
+    }
+
+    public static function resolve_frontend_page(): void {
+        $views_path = AppConfig::VIEWS_PATH;
+        $pages = AppConfig::get_user_config()["pages"];
+        Router::resolve_page($views_path, $pages);
+    }
+
+    public static function resolve_admin_page(): void {
+        $views_path = AppConfig::ADMIN_VIEWS_PATH;
+        $pages = AppConfig::get_user_config()["pages"];
+        Router::resolve_page($views_path, $pages);
     }
 }

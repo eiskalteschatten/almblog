@@ -27,8 +27,8 @@ use AlmBlog\Pages\SEO;
             <?php include(__DIR__ . "/../partials/logo.php"); ?>
 
             <nav>
-                <a href="/" class="<?php echo Nav::get_active_css_class("home"); ?>">Home</a>
-                <a href="/about" class="<?php echo Nav::get_active_css_class("about"); ?>">About</a>
+                <a href="/admin" class="<?php echo Nav::get_active_css_class("home"); ?>">Home</a>
+                <a href="/admin/posts" class="<?php echo Nav::get_active_css_class("posts"); ?>">Posts</a>
             </nav>
         </header>
 

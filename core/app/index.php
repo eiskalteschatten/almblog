@@ -8,7 +8,14 @@ use AlmBlog\Config\AppConfig;
 use AlmBlog\Core\Router;
 
 Environment::load_dot_env();
-AppConfig::get_user_config();
-Router::resolve_page();
+
+if (isset($is_admin)) {
+    AppConfig::get_admin_config();
+    Router::resolve_admin_page();
+}
+else {
+    AppConfig::get_user_config();
+    Router::resolve_frontend_page();
+}
 
 require_once(AppConfig::VIEWS_PATH . "/layouts/main.php");

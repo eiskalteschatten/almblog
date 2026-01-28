@@ -1,0 +1,10 @@
+{
+    "pages": {
+        "posts": {
+            "title": "Posts"
+        },
+        "404": {
+            "title": "Page Not Found"
+        }
+    }
+}
