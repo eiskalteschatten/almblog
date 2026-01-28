@@ -25,7 +25,7 @@ class Router {
         return implode("/", $path_parts);
     }
 
-    public static function resolve_page(): array {
+    public static function resolve_page(): void {
         $path_parts = Router::parse_uri();
         $page_key = count($path_parts) === 0 || $path_parts[0] === "" ? "home" : implode("/", $path_parts);
         $page_path_base = AppConfig::VIEWS_PATH . "/pages/" . $page_key;
@@ -41,9 +41,11 @@ class Router {
             $page_path = AppConfig::VIEWS_PATH . "/pages/404.php";
         }
 
-        $page_config = isset(PageConfig::PAGES[$page_key]) ? PageConfig::PAGES[$page_key] : array();
+        $pages = AppConfig::get_user_config()["pages"];
+        $page_config = isset($pages[$page_key]) ? $pages[$page_key] : [];
 
         PageConfig::set_page_config($page_config);
         PageConfig::set_page_path($page_path);
+        PageConfig::set_page_key($page_key);
     }
 }

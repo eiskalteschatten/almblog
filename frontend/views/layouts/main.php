@@ -6,6 +6,8 @@ use AlmBlog\Config\AppConfig;
 use AlmBlog\Config\PageConfig;
 use AlmBlog\Pages\Nav;
 use AlmBlog\Pages\SEO;
+
+$user_config = AppConfig::get_user_config();
 ?>
 
 <!DOCTYPE html>
@@ -28,14 +30,12 @@ use AlmBlog\Pages\SEO;
     </head>
     <body>
         <header>
-            <div>
-                <?php include("../partials/logo.php"); ?>
+            <?php include(__DIR__ . "/../partials/logo.php"); ?>
 
-                <nav>
-                    <a href="/" class="<?php echo Nav::get_active_css_class(); ?>">Home</a>
-                    <a href="/about" class="<?php echo Nav::get_active_css_class(); ?>">About</a>
-                </nav>
-            </div>
+            <nav>
+                <a href="/" class="<?php echo Nav::get_active_css_class("home"); ?>">Home</a>
+                <a href="/about" class="<?php echo Nav::get_active_css_class("about"); ?>">About</a>
+            </nav>
         </header>
 
         <?php include_once(PageConfig::$page_path); ?>

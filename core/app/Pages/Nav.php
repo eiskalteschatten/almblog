@@ -7,7 +7,8 @@ use AlmBlog\Config\AppConfig;
 use AlmBlog\Config\PageConfig;
 
 class Nav {
-    public static function get_active_css_class(string $path): string {
-        return PageConfig::$page_config["key"] === $path ? " active" : "";
+    public static function get_active_css_class(string $key): string {
+        $is_active = PageConfig::$page_key === $key;
+        return $is_active ? " active" : "";
     }
 }
