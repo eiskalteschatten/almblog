@@ -5,3 +5,18 @@ services:
             - "8000:80"
         volumes:
             - ".:/var/www/html/"
+
+    db:
+        image: mariadb:latest
+        volumes:
+            - "almblog_mariadb_data:/var/lib/mysql"
+        ports:
+            - "3306:3306"
+        environment:
+            - MYSQL_ROOT_PASSWORD=almblog
+            - MYSQL_DATABASE=almblog
+            - MYSQL_USER=almblog
+            - MYSQL_PASSWORD=almblog
+
+volumes:
+    almblog_mariadb_data:
